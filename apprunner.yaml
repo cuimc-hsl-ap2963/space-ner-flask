@@ -13,4 +13,4 @@ run:
     - python3 -m spacy download en_core_web_trf
   command: python3 app.py
   network:
-    port: 8000
+    port: 8080
