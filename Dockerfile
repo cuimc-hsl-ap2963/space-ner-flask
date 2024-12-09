@@ -1,17 +1,8 @@
-# Use a lightweight Python 3.11 image
-FROM python:3.11-slim
+# syntax=docker/dockerfile:1
 
-# Set the working directory
-WORKDIR /
-
-# Copy application files
+FROM python:3.12
+WORKDIR /app
 COPY . .
-
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Expose port 8080 (required for App Runner)
+RUN pip3 install -r requirements.txt
 EXPOSE 8080
-
-# Run the Flask application
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]
