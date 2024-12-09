@@ -1,3 +1,5 @@
-Flask==2.3.2
-spacy==3.6.1
-en-core-web-trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.6.1/en_core_web_trf-3.6.1-py3-none-any.whl
+setuptools==75.6.0
+wheel==0.45.1
+Flask==3.1.0
+spacy==3.8.2
+en-core-web-trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.8.0/en_core_web_trf-3.8.0-py3-none-any.whl
