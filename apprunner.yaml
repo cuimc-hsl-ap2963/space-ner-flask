@@ -4,13 +4,12 @@ build:
   commands:
     build:
       - echo "Building..."
+      - pip3 install -U pip setuptools wheel
+      - pip3 install -U spacy
+      - pip3 install -U flask
+      - python3 -m spacy download en_core_web_trf
 run:
   runtime-version: 3.11
-  pre-run:
-    - pip3 install -U pip setuptools wheel
-    - pip3 install -U spacy
-    - pip3 install -U flask
-    - python3 -m spacy download en_core_web_trf
   command: python3 app.py
   network:
     port: 8080
