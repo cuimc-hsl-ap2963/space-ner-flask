@@ -4,6 +4,9 @@ import spacy
 
 app = Flask(__name__)
 
+# Load the spaCy model globally
+nlp = spacy.load("en_core_web_trf")
+
 @app.route('/health', methods=['GET'])
 def health():
     return jsonify(status="healthy"), 200
@@ -14,7 +17,6 @@ def process_string():
     input_data = request.json.get('input_string', '')
     
     # Peform NER on the string
-    nlp = spacy.load("en_core_web_trf")
     doc = nlp(input_data)
     org_entities = [ent.text for ent in doc.ents if ent.label_ == "ORG"]
     result = org_entities
