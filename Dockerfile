@@ -4,6 +4,8 @@ FROM python:3.12
 
 COPY . .
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-CMD gunicorn -b 0.0.0.0:8080 app:app
+EXPOSE 8080
+
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "flaskapp:app"]
