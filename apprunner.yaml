@@ -4,10 +4,12 @@ build:
   commands:
     build:
       - pip3 install -r requirements.txt
+      - pipenv install
 run:
   runtime-version: 3.11
   pre-run:  
     - pip3 install -r requirements.txt
-  command: gunicorn -b 0.0.0.0:8080 app:app
+    - pipenv install
+  command: pipenv run gunicorn -b 0.0.0.0:8080 app:app
   network:
     port: 8080
