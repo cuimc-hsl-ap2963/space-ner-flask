@@ -2,11 +2,15 @@ from flask import Flask, request, jsonify
 
 import spacy
 
+def load_spacy_model():
+  global nlp
+  nlp = spacy.load("en_core_web_trf")
+
+# Load the model before creating the app
+load_spacy_model()
+
 # Create the Flask app.
 app = Flask(__name__)
-
-# Load the spaCy model globally.
-nlp = spacy.load("en_core_web_trf")
 
 # Define the health check endpoint; this was added for future deployment to AWS App Runner.
 @app.route('/health', methods=['GET'])
