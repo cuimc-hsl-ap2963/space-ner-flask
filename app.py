@@ -4,7 +4,7 @@ import spacy
 
 def load_spacy_model():
   global nlp
-  nlp = spacy.load("en_core_web_trf")
+  nlp = spacy.load("en_core_web_lg")
 
 # Load the model before creating the app
 load_spacy_model()
