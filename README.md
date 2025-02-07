@@ -1,4 +1,4 @@
-* Named Entity Recognition with spaCy
+# Named Entity Recognition with spaCy
 
 The python app `app.py` accepts a POST request with a string and returns an array of named ORGs from the string. The app is enabled by the Flask library and is set up to run on AWS AppRunner.
 
